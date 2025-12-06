@@ -4,7 +4,7 @@
 #include<string>
 
 #define MAP_X_MAX maxX-1
-#define MAP_Y_MAX maxX-15
+#define MAP_Y_MAX maxY-15
 
 
 

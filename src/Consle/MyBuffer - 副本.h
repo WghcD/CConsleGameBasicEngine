@@ -208,14 +208,27 @@ public:
 		
 		int layerN=TypeToLayer(IdToType(uuid));//目标图层
 		
-		
+		/*检查是否重复*/
+		queue<ClearTask> Tmp;bool CheackFlag=0;
+		while(!RenderHistory[uuid].empty()){//遍历访问  防止要渲染的就是已在缓冲区上的
+			int _x=RenderHistory[uuid].top().x,_y=RenderHistory[uuid].top().y,_ForgC=RenderHistory[uuid].top().ForgC,_BackC=RenderHistory[uuid].top().BackC;char _show=RenderHistory[uuid].top().show;
+			Tmp.push(RenderHistory[uuid].top());
+			RenderHistory[uuid].pop();
+			if(x==_x&&y==_y&&show==_show&&ForgC==_ForgC&&BackC==_BackC){CheackFlag=1;break;}
+		}
+		while(!Tmp.empty()){//复原
+			RenderHistory[uuid].push(Tmp.front());
+			Tmp.pop();
+		}                         
+		if(CheackFlag){return false;}
+		/*检查完成*/
 		
 		
 		/*清理上次渲染痕迹*/
 		while(!RenderHistory[uuid].empty()){
 			if(RenderHistory[uuid].top().UT==UT){break;}/*防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染*/
 			int _x=RenderHistory[uuid].top().x,_y=RenderHistory[uuid].top().y;
-			//Log(to_string(_x)+" "+to_string(_y));
+			Log(to_string(_x)+" "+to_string(_y));
 			layers[layerN][_x][_y].clear();//擦除指定图层上指定点内容
 			int debugData=MergeLayerPoint(_x,_y);//更新buffer该点显示
 			//Log(to_string(debugData));

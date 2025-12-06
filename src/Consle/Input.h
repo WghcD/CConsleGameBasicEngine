@@ -34,6 +34,7 @@ class KeyBoardMonitor {
 				KeyState[ProcessVkToChar(p->vkCode)]=true;
             }
 			else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP) {
+			
 				//Log(to_string(p->vkCode));
 				KeyState[ProcessVkToChar(p->vkCode)]=false;
 			}	
