@@ -1,13 +1,14 @@
-#include"main.h"
-
-
+#include"Game/game.cpp"
 
 int main () {
-	game=AM<GAME>();
-	game.init();
-	while(isRunning){
-		game.run();
+	Log("Hello World!");
+	game=new Game;
+	game->init();
+
+	while(IsRunning){
+		game->run();
 	}
-	
+	game->end();
 	return 0;
 }
+

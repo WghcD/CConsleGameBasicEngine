@@ -1,7 +1,7 @@
 #include<iostream>
 #include <memory>
 
-// 全局共享指针容器（实际项目建议封装为类）
+// 全局共享指针容器
 namespace GlobalHolder {
     template <typename T>
     struct Holder {
@@ -21,7 +21,7 @@ T* AllocateMemory(Args&&... args) {
     return ptr.get(); // 返回裸指针
 }
 
-// 手动释放内存（可选）
+// 手动释放内存
 template <typename T>
 void release_memory(T* target) {
     auto& pool = GlobalHolder::Holder<T>::pool;
