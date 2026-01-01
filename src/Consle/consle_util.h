@@ -67,9 +67,10 @@ bool ConsleInit(){
 	NoEdit();
 
 	SetTitle(TITLE);
-	if(!SetConsoleCtrlHandler(ConsoleHandler, TRUE)) {//高帧率必须要注册拦截窗口关闭   否则windows会爆程序未正常终止
+	if(!SetConsoleCtrlHandler(ConsoleHandler, TRUE)) {//必须要注册拦截窗口关闭   否则windows会爆程序未正常终止
         std::cout << "无法注册控制台处理器" << std::endl; PAUSE   return false;
     }
+	
 	printf("If you can see this massage clearly,it means that you have been in trouble :(");
 	system("cls");
 	return true;

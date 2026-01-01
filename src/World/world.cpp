@@ -1,4 +1,7 @@
+#include"graphics_effect.h"
+
 #include"world.h"
+
 #include"MapSource.h"
 
 int GAMEMAP::SpecificRandomForMapSpawn(int a){
@@ -14,29 +17,24 @@ int GAMEMAP::SpecificRandomForMapSpawn(int a){
 
 
 void GAMEMAP::init(){
-	_charInfo Test('#',7,16);
-	for(int i=0;i<MAP_X_MAX;i++)
-		for(int j=0;j<MAP_Y_MAX;j++){
-			Map[i][j].charInfo=Test;
-		}
 	Log("GameMap Class Init Comletely");
 }
 	
 GAMEMAP::GAMEMAP() {
 	get_uuid(MAP_TYPE);
-	Buffer.write(uuid,10,10,"TEST",114514);
+
 	Log("GameMap Class Build Comletely");
 	
 	init();
 }
 
 void GAMEMAP::update(){
-	Log("Render Map Start");
+
 	for(int i=0;i<MAP_X_MAX;i++)//渲染地图
 		for(int j=0;j<MAP_Y_MAX;j++){
 			buffer.write(uuid,i,j,Map[i][j].charInfo);
 		}
-	Log("Render Map End");
+
 }
 
 void GAMEMAP::create_Spawning(int x,int y,vector<vector<MapBlock>>& Spawning){
@@ -51,8 +49,8 @@ void GAMEMAP::create_Spawning(int x,int y,vector<vector<MapBlock>>& Spawning){
 			}
 		}
 		}
-	}
-	*/
+	}*/
+	
 }
 
 void GAMEMAP::MapSpawn(int type){
@@ -183,19 +181,24 @@ void GAMEMAP::MapSpawn(int type){
 	
 	
 	last_create_win=clock();
-	*/
 
+*/
 }
 
 void GAMEMAP::MapLoad(int num){//加载MapSource.h中的已有Map
 	
 }
 
+
+
 /*-------------------------------------------------------------------------------------------------+-----------------------*/
 /*------------------------------------------------------------------------------------------------+------------------------*/
 
+
+
 void WORLD::update(){
 	GameMap->update();
+	
 }
 
 void WORLD::init(){

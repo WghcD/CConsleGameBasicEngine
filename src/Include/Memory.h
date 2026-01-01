@@ -29,3 +29,11 @@ void release_memory(T* target) {
         [target](const std::shared_ptr<T>& ptr) { return ptr.get() == target; });
     pool.erase(it, pool.end()); // 从容器移除，若无其他引用则内存自动释放
 }
+
+/*
+// 创建对象并自动托管
+MyClass* obj = AllocateMemory<MyClass>(构造参数); 
+
+// 使用宏简写
+MyClass* obj2 = AM<MyClass>();
+*/

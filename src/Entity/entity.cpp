@@ -1,9 +1,8 @@
 #pragma once
 #include"entity.h"
 
-std::queue<std::function<void()>> EntityUpdateQueue;  
-std::queue<std::function<void()>> BackEntityUpdateQueue;                     
-EntityBase::EntityBase(void) : isLiving(1),isActive(1){get_uuid(ENTITY_TYPE);Log(to_string(uuid));}//所以Entity不需要显式调用get_uuid
+                   
+EntityBase::EntityBase(void) : isLiving(1),isActive(1){get_uuid(ENTITY_TYPE);Log(to_string(uuid));}//So That Entity不需要显式调用get_uuid
 int EntityBase::getX(){return pos.x;}
 int EntityBase::getY(){return pos.y;}
 void EntityBase::changePos(Point newPos){pos=newPos;}
@@ -19,7 +18,7 @@ void EntityBase::SelfKill(){isLiving=false;destory_uuid();Log("Entity "+to_strin
 void EntityBase::create(){}
 
 
-void EntityBase::putUpdate(){BackEntityUpdateQueue.push(std::bind(&EntityBase::update, this));}
+void EntityBase::putUpdate(){BackObjectUpdateQueue.push(std::bind(&EntityBase::update, this));}
 bool EntityBase::canUpdate(){if(clock()-lastUpdate>updateSpeed){lastUpdate=clock();return true;}else{return false;}}
 
 void EntityBase::init(){}
@@ -42,15 +41,5 @@ void AttackEntityBase::create(){}
 void AttackEntityBase::render(){}
 void AttackEntityBase::SelfKill(){}
 
-void entityUpdate(){
-	while(!EntityUpdateQueue.empty()){
-		EntityUpdateQueue.front()();
-		EntityUpdateQueue.pop();
-	}
-	while(!BackEntityUpdateQueue.empty()){
-		EntityUpdateQueue.push(BackEntityUpdateQueue.front());
-		BackEntityUpdateQueue.pop();
-	}
-}
 
 

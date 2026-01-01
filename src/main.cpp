@@ -5,10 +5,13 @@ int main () {
 	game=new Game;
 	game->init();
 
+	Circle1* obj = AM<Circle1>();
+
 	while(IsRunning){
 		game->run();
+		Sleep(12);
 	}
 	game->end();
-	return 0;
+	return ExitCode;
 }
 

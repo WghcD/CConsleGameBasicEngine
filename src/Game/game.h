@@ -4,6 +4,8 @@
 
 #include"../Include/include.h" //包含基础类与基础函数
 
+
+
 //所有二级类的源都放在这里  就不用添在编译指令里了
 
 #include"../Entity/entity.cpp"
@@ -12,11 +14,17 @@
 	
 
 
-class Game{
+class Game : public ObjectBase
+{
 public:
+
+	Game();
+	
 	void init();
 	void run();
 	void broke(int seconds);
 	void end();
+	
+	void DebugPrint();
 };
 Game* game=NULL;

@@ -28,9 +28,9 @@ void Player::update() {
 }
 
 void Player::render() {
-	Log("Player Render Start");
+	//Log("Player Render Start");
     Buffer.write(uuid,pos.x,pos.y,'@',10);
-	Log("Player Render End");
+	//Log("Player Render End");
 }
 
 

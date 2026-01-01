@@ -6,12 +6,13 @@
 using namespace std;
 #define WL WriteLog
 #define Log WriteLog
+ofstream TMDC;
 bool WriteLog(const string& l){
-	if(l==" SSCC"||l==" OK"||l=="rogramm will exit with ExitCode"||l=="Posision: ")return false;
-	ofstream Log;
-	Log.open("CommonLog.log", std::ios_base::app);
-	Log<<"["<<to_string(clock())<<"] "<<l<<"\n";
-	Log.close();
+
+	
+	
+	TMDC<<"["<<to_string(clock())<<"] "<<l<<"\n";
+
 	return true;
 }
 
@@ -20,9 +21,13 @@ bool WriteLog(int n){
 }
 
 bool WriteLog(const string& l,const string& fileName){
-	ofstream Log;
-	Log.open(fileName.c_str(), std::ios_base::app);
-	Log<<"["<<to_string(clock())<<"] "<<l<<"\n";
-	Log.close();
+	ofstream og;
+	og.open(fileName.c_str(), std::ios_base::app);
+	og<<"["<<to_string(clock())<<"] "<<l<<"\n";
+	og.close();
 	return true;
+}
+
+void LogInit(){
+	TMDC.open("CommonLog.log", std::ios_base::app);
 }

@@ -10,6 +10,7 @@
 #include<algorithm>
 #include<thread>
 #include<fstream>
+#include<set>
 #include <unistd.h>
 #include <dos.h>
 #include<cstdio>
@@ -44,9 +45,15 @@ using Func = std::function<void()>;
 
 #define TITLE "NewStarting"
            
+#define DEBUG_MODE TRUE
 
-#define HIGH 147//主地图宽
-#define WIDE 61//主地图高
+#define maxX 60
+#define maxY 234
+
+#define InfoPrintStartY maxY-15
+
+#define CONTINUE 1
+
 
 
 #define CONHIGH 256 //窗口高
@@ -59,11 +66,20 @@ int ExitCode;
 string ExitText="N";
 bool IsRunning=true;
 
+
+
+struct _DebugInfo{
+	int ObjectCntNow;
+}DebugInfo;
+
 struct Point{
 	int x,y;
 	Point(){}
 	Point(int a, int b) : x(a), y(b) {}
 	Point& operator=(const Point& other) {return *this;}
+	bool operator<(const Point& other) const {
+        return (x < other.x) || (x == other.x && y < other.y);
+    }
 };
 
 void SetColor(int ForgC, int BackC) {

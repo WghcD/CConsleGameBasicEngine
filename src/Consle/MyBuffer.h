@@ -12,8 +12,7 @@ using namespace std;
 HANDLE _conhandle=NULL;
 
 
-#define maxX 60
-#define maxY 234
+
 
 #define buffer Buffer
 
@@ -254,59 +253,20 @@ public:
 	bool write(int uuid,int x,int y,string show,int ForgC){
 		return write(uuid,x,y,show,ForgC,16 );
 	}
-	
+	bool write(int uuid,int x,int y,string show){
+		return write(uuid,x,y,show,7,16 );
+	}
+	bool write(int uuid,string show,int x,int y){
+		return write(uuid,x,y,show,7,16 );
+	}
+	bool write(int uuid,int x,int y){
+		return write(uuid,x,y,' ',16,15);
+	}
 };
 
 
 
-/*class ObjectBuffer : public BufferBase
-{
-public:
 
-	unordered_map<int,stack<ClearTask>> RenderHistory;
-	
-	bool clear(ClearTask CT){
-		int x=CT.x,y=CT.y;
-		if(x<0||y<0||x>maxX||y>maxY)return false;
-		_gto(x,y);printf(" ");
-		return true;
-	}
-	
-	bool write(int x,int y,char show,int ForgC, int BackC, int uuid){//最终被调用
-		write(x,y,show,ForgC, BackC);
-		
-		if(RenderHistory.count(uuid)){
-			while(!RenderHistory[uuid].empty()){
-				if(RenderHistory[uuid].top().UT==UT){break;}//防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染
-				if(RenderHistory[uuid].top().UT==UT){break;}//防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染
-				clear(RenderHistory[uuid].top());
-				RenderHistory[uuid].pop();
-			}
-		}
-		
-		ClearTask NewTask(x,y,UT);
-		RenderHistory[uuid].push(NewTask);
-		
-		return true;
-	}
-	bool write(int x,int y,string show,int ForgC,int BackC, int uuid){
-		for(int i=0;i<show.size();i++){
-			if(write(x,y+i,show[i],ForgC,BackC, uuid))continue;
-			else return false;
-		}
-		return true;
-	}
-	bool write(int x,int y,char show,int ForgC, int uuid){
-		return write(x,y,show,ForgC, 16, uuid);
-	}
-	bool write(int x,int y,string show,int ForgC, int uuid){
-		return write(x,y,show,ForgC,16, uuid);
-	}
-	
-	
-	
-};
-*/
 
 BufferBase Buffer(maxX,maxY,0);//第三个参数是每帧的间隔而不是每秒帧数，单位为ms
 
