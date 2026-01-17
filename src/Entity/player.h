@@ -9,6 +9,7 @@ private:
     
 public:
 	Player();
+	Player(int x,int y);
     void update() override;
     void render() override;
 	void init() override;

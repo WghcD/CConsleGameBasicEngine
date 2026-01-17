@@ -13,13 +13,12 @@ void EntityBase::setX(int _x){pos.x=_x;}
 void EntityBase::setY(int _y){pos.y=_y;}
 void EntityBase::update(){}
 void EntityBase::render(){}
-void EntityBase::SelfKill(){isLiving=false;destory_uuid();Log("Entity "+to_string(uuid)+" has been Destoried");}
+void EntityBase::SelfKill(){isLiving=false;Log("Entity "+to_string(uuid)+" has been Destoried");}
 
 void EntityBase::create(){}
 
 
-void EntityBase::putUpdate(){BackObjectUpdateQueue.push(std::bind(&EntityBase::update, this));}
-bool EntityBase::canUpdate(){if(clock()-lastUpdate>updateSpeed){lastUpdate=clock();return true;}else{return false;}}
+
 
 void EntityBase::init(){}
 

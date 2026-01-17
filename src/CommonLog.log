@@ -1,9 +1,455 @@
-155] 12 13
-[155] 13 8
-[155] 13 9
-[155] 13 10
-[155] 13 11
-[155] 13 12
-[155] 14 9
-[155] 14 11
-[14457] Program Exit Properly.
+[36] Hello World!
+[56] GameMap Class Build Comletely
+[56] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[57] Player Init SSCC
+[57] Init OK
+[57] KeyMonitor Thread Started
+[58] 985
+[38] Hello World!
+[56] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[57] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[42] Hello World!
+[59] GameMap Class Build Comletely
+[59] GameMap Class Init Comletely
+[60] World Class Build Comletely
+[60] World Class Init Completely
+[60] 57257
+[60] Player Init SSCC
+[60] Init OK
+[60] KeyMonitor Thread Started
+[6906] Programm exit by CTRL_CLOSE_EVENT
+[6906] Programm will self-kill
+[38] Hello World!
+[55] GameMap Class Build Comletely
+[55] GameMap Class Init Comletely
+[55] World Class Build Comletely
+[55] World Class Init Completely
+[55] 57257
+[55] Player Init SSCC
+[56] Init OK
+[56] KeyMonitor Thread Started
+[57] !!!
+[36] Hello World!
+[53] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[54] 57257
+[54] 57257
+[54] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[55] -1
+[55] -1
+[56] !!!
+[41] Hello World!
+[58] GameMap Class Build Comletely
+[58] GameMap Class Init Comletely
+[59] World Class Build Comletely
+[59] World Class Init Completely
+[59] 57257
+[59] 57257
+[59] Player Init SSCC
+[59] Init OK
+[59] KeyMonitor Thread Started
+[59] -1
+[60] -1
+[61] !!!
+[36] Hello World!
+[53] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[53] 57257
+[54] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[54] -1
+[55] -1
+[55] !!!
+[39] Hello World!
+[58] GameMap Class Build Comletely
+[58] GameMap Class Init Comletely
+[58] World Class Build Comletely
+[58] World Class Init Completely
+[59] 57257
+[59] Player Init SSCC
+[59] Init OK
+[59] KeyMonitor Thread Started
+[61] !!!
+[61] !!!
+[40] Hello World!
+[59] GameMap Class Build Comletely
+[59] GameMap Class Init Comletely
+[59] World Class Build Comletely
+[60] World Class Init Completely
+[60] 57257
+[60] Player Init SSCC
+[60] Init OK
+[60] KeyMonitor Thread Started
+[61] !!!
+[61] !!!
+[62] !!!
+[38] Hello World!
+[56] GameMap Class Build Comletely
+[56] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[57] Player Init SSCC
+[57] Init OK
+[57] KeyMonitor Thread Started
+[59] !!!
+[1819] Programm exit by CTRL_CLOSE_EVENT
+[1819] Programm will self-kill
+[35] Hello World!
+[53] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[53] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[55] !!!
+[2345] Programm exit by CTRL_CLOSE_EVENT
+[2345] Programm will self-kill
+[39] Hello World!
+[57] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[58] World Class Init Completely
+[58] 57257
+[58] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[60] !!!
+[1714] Programm exit by CTRL_CLOSE_EVENT
+[1714] Programm will self-kill
+[35] Hello World!
+[53] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[54] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[55] !!!
+[1621] Programm exit by CTRL_CLOSE_EVENT
+[1621] Programm will self-kill
+[37] Hello World!
+[55] GameMap Class Build Comletely
+[55] GameMap Class Init Comletely
+[55] World Class Build Comletely
+[55] World Class Init Completely
+[55] 57257
+[56] Player Init SSCC
+[56] Init OK
+r Thread Started
+[58] !!!
+[58] !!!
+[58] !!!
+[58] !!!
+[10608] Programm exit by CTRL_CLOSE_EVENT
+[10608] Programm will self-kill
+[36] Hello World!
+[52] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[53] Player Init SSCC
+[53] Init OK
+[53] KeyMonitor Thread Started
+[54] !!!
+[54] !!!
+[55] !!!
+[55] !!!
+[1448] Programm exit by CTRL_CLOSE_EVENT
+[1448] Programm will self-kill
+[39] Hello World!
+[57] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[57] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[59] !!!
+[38] Hello World!
+[56] GameMap Class Build Comletely
+[56] GameMap Class Init Comletely
+[56] World Class Build Comletely
+[56] World Class Init Completely
+[56] 57257
+[56] Player Init SSCC
+[56] Init OK
+[57] KeyMonitor Thread Started
+[35] Hello World!
+[53] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[54] World Class Init Completely
+[54] 57257
+[54] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[55] !!!
+[2709] Programm exit by CTRL_CLOSE_EVENT
+[2709] Programm will self-kill
+[44] Hello World!
+[65] GameMap Class Build Comletely
+[65] GameMap Class Init Comletely
+[65] World Class Build Comletely
+[65] World Class Init Completely
+[66] 57257
+[66] Player Init SSCC
+[66] Init OK
+r Thread Started
+[68] !!!
+[3387] Programm exit by CTRL_CLOSE_EVENT
+[3387] Programm will self-kill
+[37] Hello World!
+[54] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[54] 57257
+[55] Player Init SSCC
+[55] Init OK
+[55] KeyMonitor Thread Started
+[56] !!!
+[1646] Programm exit by CTRL_CLOSE_EVENT
+[1646] Programm will self-kill
+[33] Hello World!
+[52] GameMap Class Build Comletely
+[52] GameMap Class Init Comletely
+[52] World Class Build Comletely
+[52] World Class Init Completely
+[52] 57257
+[52] Player Init SSCC
+[52] Init OK
+[53] KeyMonitor Thread Started
+[54] !!!
+[38] Hello World!
+[56] GameMap Class Build Comletely
+[56] GameMap Class Init Comletely
+[56] World Class Build Comletely
+[56] World Class Init Completely
+[56] 57257
+[56] Player Init SSCC
+[56] Init OK
+[56] KeyMonitor Thread Started
+[58] !!!
+[36] Hello World!
+[55] GameMap Class Build Comletely
+[55] GameMap Class Init Comletely
+[55] World Class Build Comletely
+[55] World Class Init Completely
+[55] 57257
+[55] Player Init SSCC
+[55] Init OK
+[55] KeyMonitor Thread Started
+[57] !!!
+[2939] Programm exit by CTRL_CLOSE_EVENT
+[2940] Programm will self-kill
+[36] Hello World!
+[54] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[55] 57257
+[55] Player Init SSCC
+[55] Init OK
+[55] KeyMonitor Thread Started
+[57] !!!
+[1590] Programm exit by CTRL_CLOSE_EVENT
+[1591] Programm will self-kill
+[39] Hello World!
+[57] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[58] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[59] !!!
+[1706] Programm exit by CTRL_CLOSE_EVENT
+[1707] Programm will self-kill
+[36] Hello World!
+[54] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[55] 57257
+[55] Player Init SSCC
+[55] Init OK
+[55] KeyMonitor Thread Started
+[56] !!!
+[1388] Programm exit by CTRL_CLOSE_EVENT
+[1388] Programm will self-kill
+[38] Hello World!
+[55] GameMap Class Build Comletely
+[55] GameMap Class Init Comletely
+[55] World Class Build Comletely
+[55] World Class Init Completely
+[55] 57257
+[55] Player Init SSCC
+[55] Init OK
+[56] KeyMonitor Thread Started
+[57] !!!
+[38] Hello World!
+[56] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[57] Player Init SSCC
+[57] Init OK
+[57] KeyMonitor Thread Started
+[58] !!!
+[1278] Programm exit by CTRL_CLOSE_EVENT
+[1278] Programm will self-kill
+[36] Hello World!
+[53] GameMap Class Build Comletely
+[53] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[53] Player Init SSCC
+[53] Init OK
+[54] KeyMonitor Thread Started
+[55] !!!
+[37] Hello World!
+[53] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[54] 57257
+[54] Player Init SSCC
+[54] Init OK
+[54] KeyMonitor Thread Started
+[55] !!!
+[1686] Programm exit by CTRL_CLOSE_EVENT
+[1686] Programm will self-kill
+[36] Hello World!
+[54] GameMap Class Build Comletely
+[54] GameMap Class Init Comletely
+[54] World Class Build Comletely
+[54] World Class Init Completely
+[54] 57257
+[54] Player Init SSCC
+[54] Init OK
+[55] KeyMonitor Thread Started
+[56] !!!
+[1357] Programm exit by CTRL_CLOSE_EVENT
+[1358] Programm will self-kill
+[35] Hello World!
+[52] GameMap Class Build Comletely
+[52] GameMap Class Init Comletely
+[53] World Class Build Comletely
+[53] World Class Init Completely
+[53] 57257
+[53] Player Init SSCC
+[53] Init OK
+[53] KeyMonitor Thread Started
+[54] !!!
+[1051] Programm exit by CTRL_CLOSE_EVENT
+[1051] Programm will self-kill
+[40] Hello World!
+[58] GameMap Class Build Comletely
+[58] GameMap Class Init Comletely
+[58] World Class Build Comletely
+[58] World Class Init Completely
+[58] 57257
+[58] Player Init SSCC
+[59] Init OK
+[59] KeyMonitor Thread Started
+[60] !!!
+[952] Programm exit by CTRL_CLOSE_EVENT
+[952] Programm will self-kill
+[37] Hello World!
+[55] GameMap Class Build Comletely
+[55] GameMap Class Init Comletely
+[55] World Class Build Comletely
+[55] World Class Init Completely
+[55] 57257
+[56] Player Init SSCC
+[56] Init OK
+[56] KeyMonitor Thread Started
+[57] !!!
+[1357] Programm exit by CTRL_CLOSE_EVENT
+[1357] Programm will self-kill
+[47] Hello World!
+[82] GameMap Class Build Comletely
+[82] GameMap Class Init Comletely
+[82] World Class Build Comletely
+[83] World Class Init Completely
+[83] 57257
+[83] Player Init SSCC
+[83] Init OK
+[83] KeyMonitor Thread Started
+[84] !!!
+[7115] Programm exit by CTRL_CLOSE_EVENT
+[7116] Programm will self-kill
+[39] Hello World!
+[57] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[57] World Class Init Completely
+[57] 57257
+[58] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[59] !!!
+[1570] Programm exit by CTRL_CLOSE_EVENT
+[1570] Programm will self-kill
+[37] Hello World!
+[56] GameMap Class Build Comletely
+[56] GameMap Class Init Comletely
+[56] World Class Build Comletely
+[56] World Class Init Completely
+[56] 57257
+[57] Player Init SSCC
+[57] Init OK
+[57] KeyMonitor Thread Started
+[58] !!!
+[1266] Programm exit by CTRL_CLOSE_EVENT
+[1266] Programm will self-kill
+[39] Hello World!
+[57] GameMap Class Build Comletely
+[57] GameMap Class Init Comletely
+[57] World Class Build Comletely
+[58] World Class Init Completely
+[58] 57257
+[58] Player Init SSCC
+[58] Init OK
+[58] KeyMonitor Thread Started
+[60] !!!
+[1096] Programm exit by CTRL_CLOSE_EVENT
+[1097] Programm will self-kill
+[41] Hello World!
+[60] GameMap Class Build Comletely
+[60] GameMap Class Init Comletely
+[60] World Class Build Comletely
+[60] World Class Init Completely
+[60] 57257
+[61] Player Init SSCC
+[61] Init OK
+[61] KeyMonitor Thread Started
+[63] !!!
+[950] Programm exit by CTRL_CLOSE_EVENT
+[951] Programm will self-kill

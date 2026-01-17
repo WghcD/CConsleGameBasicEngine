@@ -31,6 +31,9 @@ using namespace std;
 
 using Func = std::function<void()>;
 
+template <typename Ret, typename... Args>
+using UniversalCallable = std::function<Ret(Args...)>;
+
 //#include"rand.h"
 #include"Memory.h"
 #include"base_class.cpp"
@@ -50,7 +53,7 @@ using Func = std::function<void()>;
 #define maxX 60
 #define maxY 234
 
-#define InfoPrintStartY maxY-15
+#define InfoPrintStartY maxY-35
 
 #define CONTINUE 1
 
@@ -65,6 +68,10 @@ HANDLE conhandle=NULL;
 int ExitCode;
 string ExitText="N";
 bool IsRunning=true;
+
+#define MAIN LastMainLoopTimeCost
+int LastMainLoopTimeCost=0,lastMain=0;
+
 
 
 
@@ -98,6 +105,7 @@ bool gto(int x, int y) {
 
 
 #define Rand get_rand
+#define random get_rand
 int last_rand;
 int get_rand(int a){
 	srand(141^clock()^last_rand);
@@ -114,6 +122,7 @@ int get_rand(int a,int b){
 #include"object_base.h"
 #include"../Consle/MyBuffer.h"
 #include"../Consle/Input.h"
+#include"../Interaction/buttons.h"
 #include"../Consle/consle_util.h"
 #include"../World/world.h"
 

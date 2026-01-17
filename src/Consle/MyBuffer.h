@@ -17,6 +17,29 @@ HANDLE _conhandle=NULL;
 #define buffer Buffer
 
 
+class _OutputBase{//基本的输出实现
+public:
+	
+	HANDLE hConsle=NULL;
+	vector<CHAR_INFO> buffer;
+	int width=maxY,height=maxY;
+	_OutputBase(){buffer.resize(width * height);}
+	void setChar(int x, int y, char ch, int ForgColor, int BackColor) {
+
+        auto& cell = buffer[x * width + y];
+        cell.Char.AsciiChar = ch;             // ASCII字符
+        cell.Attributes = ForgColor | (BackColor << 4);  // 颜色组合
+    
+	}
+	void flushBuffer() {
+	if(hConsle==NULL){hConsle=GetStdHandle(STD_OUTPUT_HANDLE);}
+    COORD bufSize = {width, height};
+    COORD bufCoord = {0, 0};
+    SMALL_RECT writeArea = {0, 0, width-1, height-1};
+    WriteConsoleOutput(hConsle, buffer.data(), bufSize, bufCoord, &writeArea);
+	}
+}OutputBase;
+
 
 void MoveConsoleToTopLeft() {
     HWND console = GetConsoleWindow();
@@ -87,7 +110,7 @@ public:
 };
 
 class BufferBase
-{
+{//面向对象的缓冲区维护与实现
 protected:
 
 
@@ -167,20 +190,22 @@ public:
 		return write(x,y,show,ForgC,16);
 	}
 	
-	void flip(){//BufferBase不提供面向对象的清理工作  也没有每帧清理所有内容的暴力清理
+	void flip(){//BufferBase没有每帧清理所有内容的暴力清理
 		for(int x=0;x<=maxX;x++){
 			for(int y=0;y<=maxY;y++){
 				if((!(buffer[Now][x][y]==buffer[Last][x][y]))){
-				_gto(x,y);
+				OutputBase.setChar(x,y,buffer[Now][x][y].show,buffer[Now][x][y].ForgC,buffer[Now][x][y].BackC);
+				/*_gto(x,y);
 				_SetColor(buffer[Now][x][y].ForgC,buffer[Now][x][y].BackC);
-				printf("%c",buffer[Now][x][y].show);
+				printf("%c",buffer[Now][x][y].show);*/
 				buffer[Last][x][y]=buffer[Now][x][y];
 				}
 
 			}
 			
 		}
-		_SetColor(7,16);
+		OutputBase.flushBuffer();
+		//_SetColor(7,16);
 	}
 	bool update(){
 		static int lastFlip=0;
@@ -216,7 +241,7 @@ public:
 			int _x=RenderHistory[uuid].top().x,_y=RenderHistory[uuid].top().y;
 			//Log(to_string(_x)+" "+to_string(_y));
 			layers[layerN][_x][_y].clear();//擦除指定图层上指定点内容
-			int debugData=MergeLayerPoint(_x,_y);//更新buffer该点显示
+			/*int debugData=*/MergeLayerPoint(_x,_y);//更新buffer该点显示
 			//Log(to_string(debugData));
 			RenderHistory[uuid].pop();
 		}
@@ -261,6 +286,9 @@ public:
 	}
 	bool write(int uuid,int x,int y){
 		return write(uuid,x,y,' ',16,15);
+	}
+	bool write(int uuid,int x,int y,int color){
+		return write(uuid,x,y,' ',16,color);
 	}
 };
 

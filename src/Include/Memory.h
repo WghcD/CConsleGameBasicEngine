@@ -28,6 +28,7 @@ void release_memory(T* target) {
     auto it = std::remove_if(pool.begin(), pool.end(),
         [target](const std::shared_ptr<T>& ptr) { return ptr.get() == target; });
     pool.erase(it, pool.end()); // 从容器移除，若无其他引用则内存自动释放
+
 }
 
 /*

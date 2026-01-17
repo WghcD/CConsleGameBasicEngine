@@ -23,13 +23,33 @@ void Game::init(){
 }
 
 void Game::DebugPrint(){
-	 buffer.write(uuid,1,InfoPrintStartY,"Object Cnt=>"+to_string(DebugInfo.ObjectCntNow));
+	static int uuidForDebugPrint=outside_get_uuid(0);//Game类的不同输出模块使用独立uuid
+	int s=0;
+	buffer.write(uuidForDebugPrint,s++,InfoPrintStartY,"Object Cnt=>"+to_string(DebugInfo.ObjectCntNow));
+	buffer.write(uuidForDebugPrint,s++,InfoPrintStartY,"LastMainLoopTimeCost=>"+to_string(MAIN));
+	Point pos1=getMousePos();buffer.write(uuidForDebugPrint,s++,InfoPrintStartY,"MousePos x=>"+to_string(pos1.x)+" y=>"+to_string(pos1.y)+"  LeftClick"+to_string(LeftClick()));
+}
+
+void Game::GeneralGameUpdate(){//与游戏本体相关的所有工作
+	static int GGUuuid1=outside_get_uuid(0);
+	if(DEBUG_MODE){
+	DebugPrint();
+	MAIN=clock()-lastMain;
+	lastMain=clock();
+	}
+	
+	
+	
 }
 
 void Game::run(){
 
+	GeneralGameUpdate();
 	
-	if(DEBUG_MODE)DebugPrint();
+	
+	
+	
+	
 
 	Buffer.update();
 	

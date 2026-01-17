@@ -6,6 +6,8 @@
 #include <atomic>
 #include <mutex>
 
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)  //ÓÃÀ´¼ì²â°´¼üµÄµã»÷ÊÂ¼þ
+
 unordered_map<char,bool> KeyState;
 bool KeyInputState=false;
 class MouseState{
@@ -18,7 +20,7 @@ class MouseState{
 char ProcessVkToChar(int Vk){
 	char result='N';
 	if(Vk>=65&&Vk<=65+26){result='a'+Vk-65;}
-	else if(Vk>=161&&Vk<=161+26){result='a'+Vk-161;}//ç»Ÿä¸€ä¸ºå°å†™
+	else if(Vk>=161&&Vk<=161+26){result='a'+Vk-161;}//Í³Ò»ÎªÐ¡Ð´
 	else if(Vk>=48&&Vk<=48+9){result='0'+Vk-48;}
 	else if(Vk>=96&&Vk<=96+9){result='0'+Vk-96;}
 	return result;
@@ -52,6 +54,7 @@ class KeyBoardMonitor {
         while (GetMessage(&msg, NULL, 0, 0) && IsRunning) {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
+			Sleep(7);
         }
         
 
@@ -78,7 +81,25 @@ public:
 KeyBoardMonitor KeyInput;
 
 
-bool getKey(char TargetKey){//æŸé”®æ˜¯å¦æŒ‰ä¸‹æˆ–æŠ¬èµ·
+bool LeftClick() {//Êó±ê×ó¼üÊÇ·ñ°´ÏÂ
+	if (KEY_DOWN(VK_LBUTTON)) return 1;else return 0;
+}
+
+Point getMousePos(){
+
+	POINT p;Point res;
+	int x, y;
+	CONSOLE_FONT_INFO a;
+	GetCursorPos(&p);
+	ScreenToClient(GetForegroundWindow(), &p);
+	GetCurrentConsoleFont(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &a);
+	res.x = p.x / a.dwFontSize.X;
+	res.y = p.y / a.dwFontSize.Y;
+	return res;
+
+}
+
+bool getKey(char TargetKey){//Ä³¼üÊÇ·ñ°´ÏÂ»òÌ§Æð
 	if(TargetKey>='A'&&TargetKey<='Z'){TargetKey='a'+TargetKey-'A';}
 	if(!KeyInputState){KeyInput.Start();return 'N';}
 	//Log(to_string(TargetKey));

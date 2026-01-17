@@ -6,11 +6,14 @@
 using namespace std;
 #define WL WriteLog
 #define Log WriteLog
-ofstream TMDC;
+
+#define AllowLogOutput 1
+
 bool WriteLog(const string& l){
 
+	if(!AllowLogOutput)return false;
 	
-	
+	ofstream TMDC("CommonLog.log", std::ios_base::app);
 	TMDC<<"["<<to_string(clock())<<"] "<<l<<"\n";
 
 	return true;
@@ -29,5 +32,5 @@ bool WriteLog(const string& l,const string& fileName){
 }
 
 void LogInit(){
-	TMDC.open("CommonLog.log", std::ios_base::app);
+	
 }

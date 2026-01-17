@@ -12,8 +12,7 @@ using namespace std;
 HANDLE _conhandle=NULL;
 
 
-#define maxX 60
-#define maxY 234
+
 
 #define buffer Buffer
 
@@ -208,27 +207,14 @@ public:
 		
 		int layerN=TypeToLayer(IdToType(uuid));//目标图层
 		
-		/*检查是否重复*/
-		queue<ClearTask> Tmp;bool CheackFlag=0;
-		while(!RenderHistory[uuid].empty()){//遍历访问  防止要渲染的就是已在缓冲区上的
-			int _x=RenderHistory[uuid].top().x,_y=RenderHistory[uuid].top().y,_ForgC=RenderHistory[uuid].top().ForgC,_BackC=RenderHistory[uuid].top().BackC;char _show=RenderHistory[uuid].top().show;
-			Tmp.push(RenderHistory[uuid].top());
-			RenderHistory[uuid].pop();
-			if(x==_x&&y==_y&&show==_show&&ForgC==_ForgC&&BackC==_BackC){CheackFlag=1;break;}
-		}
-		while(!Tmp.empty()){//复原
-			RenderHistory[uuid].push(Tmp.front());
-			Tmp.pop();
-		}                         
-		if(CheackFlag){return false;}
-		/*检查完成*/
+		
 		
 		
 		/*清理上次渲染痕迹*/
 		while(!RenderHistory[uuid].empty()){
 			if(RenderHistory[uuid].top().UT==UT){break;}/*防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染*/
 			int _x=RenderHistory[uuid].top().x,_y=RenderHistory[uuid].top().y;
-			Log(to_string(_x)+" "+to_string(_y));
+			//Log(to_string(_x)+" "+to_string(_y));
 			layers[layerN][_x][_y].clear();//擦除指定图层上指定点内容
 			int debugData=MergeLayerPoint(_x,_y);//更新buffer该点显示
 			//Log(to_string(debugData));
@@ -267,59 +253,23 @@ public:
 	bool write(int uuid,int x,int y,string show,int ForgC){
 		return write(uuid,x,y,show,ForgC,16 );
 	}
-	
+	bool write(int uuid,int x,int y,string show){
+		return write(uuid,x,y,show,7,16 );
+	}
+	bool write(int uuid,string show,int x,int y){
+		return write(uuid,x,y,show,7,16 );
+	}
+	bool write(int uuid,int x,int y){
+		return write(uuid,x,y,' ',16,15);
+	}
+	bool write(int uuid,int x,int y,int color){
+		return write(uuid,x,y,' ',16,color);
+	}
 };
 
 
 
-/*class ObjectBuffer : public BufferBase
-{
-public:
 
-	unordered_map<int,stack<ClearTask>> RenderHistory;
-	
-	bool clear(ClearTask CT){
-		int x=CT.x,y=CT.y;
-		if(x<0||y<0||x>maxX||y>maxY)return false;
-		_gto(x,y);printf(" ");
-		return true;
-	}
-	
-	bool write(int x,int y,char show,int ForgC, int BackC, int uuid){//最终被调用
-		write(x,y,show,ForgC, BackC);
-		
-		if(RenderHistory.count(uuid)){
-			while(!RenderHistory[uuid].empty()){
-				if(RenderHistory[uuid].top().UT==UT){break;}//防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染
-				if(RenderHistory[uuid].top().UT==UT){break;}//防止把前面刚写入buffer[][]还没显示过的东西给清理掉了    也就是说这里默认一个对象一次渲染在一个帧间完成   这是可以的  因为一次主循环内一个对象的一次渲染必定完全完成  而多个主循环才会有一次帧渲染
-				clear(RenderHistory[uuid].top());
-				RenderHistory[uuid].pop();
-			}
-		}
-		
-		ClearTask NewTask(x,y,UT);
-		RenderHistory[uuid].push(NewTask);
-		
-		return true;
-	}
-	bool write(int x,int y,string show,int ForgC,int BackC, int uuid){
-		for(int i=0;i<show.size();i++){
-			if(write(x,y+i,show[i],ForgC,BackC, uuid))continue;
-			else return false;
-		}
-		return true;
-	}
-	bool write(int x,int y,char show,int ForgC, int uuid){
-		return write(x,y,show,ForgC, 16, uuid);
-	}
-	bool write(int x,int y,string show,int ForgC, int uuid){
-		return write(x,y,show,ForgC,16, uuid);
-	}
-	
-	
-	
-};
-*/
 
 BufferBase Buffer(maxX,maxY,0);//第三个参数是每帧的间隔而不是每秒帧数，单位为ms
 

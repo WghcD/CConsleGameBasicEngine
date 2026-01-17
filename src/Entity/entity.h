@@ -16,7 +16,7 @@ public:
     bool isLiving;
     bool isActive;
 
-	int lastUpdate=0,updateSpeed=130;
+
     EntityBase(void);
     int getX();
     int getY();
@@ -26,15 +26,14 @@ public:
 	void setY(int _y);
     void changePos(Point newPos);
     void changePos(int x, int y);
-    virtual void update();
+	virtual void update();
     virtual void render();
     virtual void SelfKill();
     virtual void create();
 	virtual void init();
 
 
-	bool canUpdate();
-    void putUpdate();
+
 };
 
 

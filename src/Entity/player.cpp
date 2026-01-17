@@ -1,6 +1,8 @@
 #include "Player.h"
 
-Player::Player(){init();}
+Player::Player(){setX(1),setY(1);init();}
+
+Player::Player(int x,int y){setX(x);setY(y);init();}
 
 void Player::playerConrol() {
 
@@ -15,12 +17,15 @@ void Player::playerConrol() {
     if(getKey('k')) {}
     if(getKey('x')) {}
 	if(getX()<0||getY()<0||getX()>=maxX||getY()>=maxY){setX(lx),setY(ly);}
+	
+	
+	
+	
+	
 }
 
 void Player::update() {
-    putUpdate(); 
-    if(!canUpdate()){/*Log(to_string(lastUpdate)+" "+to_string(clock()-lastUpdate)+" "+to_string(updateSpeed)); */return; }
-	//Log("Player can update");
+
 
     playerConrol();
 	render();
@@ -36,9 +41,9 @@ void Player::render() {
 
 
 void Player::init(){
-	putUpdate();
+	
 	updateSpeed=70;
-	pos.x=1,pos.y=1;
+	
 	Log("Player Init SSCC");
 }
 
